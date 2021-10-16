@@ -19,6 +19,8 @@ def create_datasets(files_directory, dataset_list, destination):
             csv = csv.drop('id', 1)
         if 'my_id' in columns:
             csv = csv.drop('my_id', 1)
+        if 'ID' in columns:
+            csv = csv.drop('ID', 1)
         
         #make csv file
         file_name = os.path.join(destination, "{}_smiles.csv".format(dataset))
